@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pathemu Prototipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<aside class="aside">
+  <h1>Pathemu</h1>
+  <p>Prototipo navigabile. La mappa resta sempre sotto: ogni azione apre una scheda dal basso.</p>
+  <ul>
+    <li>Trascina una scheda verso il basso per chiuderla.</li>
+    <li>Tocca un segnaposto per aprire la scheda evento.</li>
+    <li>Il gruppo attivo, in alto a sinistra, apre le pagine dei gruppi.</li>
+  </ul>
+</aside>
+
+<div class="fit"><div class="phone" id="phone">
+  <div class="sbar"><span>9:41</span><i><b style="width:3px;height:5px"></b><b style="width:3px;height:8px"></b><b style="width:3px;height:11px"></b><b style="width:20px;height:10px;border-radius:3px;margin-left:4px"></b></i></div>
+
+  <div id="home">
+    <div id="pan" data-act="mapTap">
+      <svg viewBox="-62 -274 536 1464" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect x="-62" y="-274" width="536" height="1464" fill="#f6eee4"/>
+        <g fill="#efe3d4"><rect x="70" y="100" width="45" height="45" rx="6"/><rect x="140" y="100" width="40" height="55" rx="6"/><rect x="205" y="105" width="45" height="40" rx="6"/><rect x="70" y="345" width="45" height="40" rx="6"/><rect x="210" y="350" width="40" height="55" rx="6"/><rect x="145" y="430" width="40" height="30" rx="6"/><rect x="225" y="440" width="35" height="30" rx="6"/><rect x="70" y="490" width="45" height="35" rx="6"/><rect x="70" y="630" width="45" height="40" rx="6"/><rect x="225" y="630" width="45" height="45" rx="6"/><rect x="145" y="715" width="40" height="40" rx="6"/><rect x="225" y="720" width="45" height="38" rx="6"/><rect x="70" y="860" width="45" height="40" rx="6"/><rect x="60" y="-150" width="50" height="45" rx="6"/><rect x="215" y="-90" width="45" height="50" rx="6"/><rect x="140" y="980" width="45" height="40" rx="6"/><rect x="-40" y="560" width="50" height="30" rx="6"/></g>
+        <g fill="#ddebcb"><rect x="28" y="165" width="93" height="86" rx="18"/><rect x="142" y="552" width="92" height="82" rx="18"/><rect x="14" y="731" width="79" height="69" rx="18"/><rect x="150" y="-230" width="100" height="80" rx="18"/><rect x="40" y="1060" width="110" height="90" rx="18"/></g>
+        <g stroke="#ffffff" fill="none"><path d="M-62 70H300" stroke-width="12"/><path d="M-62 160H300" stroke-width="7"/><path d="M-62 228H300" stroke-width="14"/><path d="M-62 410H300" stroke-width="9"/><path d="M-62 472H300" stroke-width="5"/><path d="M-62 528H300" stroke-width="10"/><path d="M-62 600H300" stroke-width="6"/><path d="M-62 690H300" stroke-width="9"/><path d="M-62 770H300" stroke-width="5"/><path d="M-62 820H300" stroke-width="13"/><path d="M-62 -40H300" stroke-width="9"/><path d="M-62 -130H300" stroke-width="6"/><path d="M-62 950H300" stroke-width="8"/><path d="M-62 1040H300" stroke-width="12"/><path d="M40 -274V1190" stroke-width="10"/><path d="M128 -274V1190" stroke-width="6"/><path d="M196 -274V1190" stroke-width="12"/><path d="M262 -274V1190" stroke-width="7"/><path d="M-30 -274V1190" stroke-width="7"/></g>
+        <path d="M312 -274C296 20 336 300 304 600S328 1000 310 1190H474V-274z" fill="#cfe5ef"/>
+        <path d="M312 -274C296 20 336 300 304 600S328 1000 310 1190" fill="none" stroke="#ffffff" stroke-width="9"/>
+        <path d="M-62 334C60 344 200 332 312 300" fill="none" stroke="#ffd9bf" stroke-width="9" stroke-linecap="round"/>
+        <path d="M102 -274C92 200 182 520 150 1190" fill="none" stroke="#ffd9bf" stroke-width="9"/>
+        <text x="150" y="276" font-size="12" font-weight="600" fill="#7a6a60" font-family="Plus Jakarta Sans,sans-serif">Lineri</text>
+      </svg>
+      <div class="me" id="me" style="left:54.4%;top:54.4%"></div>
+    </div>
+    <button class="glass" id="sw" data-act="page" data-p="groups" aria-label="Cambia gruppo"></button>
+    <button class="glass fabg" id="loc" data-act="locate" aria-label="Trova la mia posizione"></button>
+    <button class="glass fabg" id="fil" data-act="menu" aria-label="Filtra per categoria"></button>
+    <button class="glass" id="srch" data-act="open" data-s="search"></button>
+    <button class="fab" id="add" data-act="open" data-s="add" aria-label="Aggiungi evento"></button>
+    <div id="menu"></div>
+  </div>
+
+  <div id="pages"></div>
+
+  <div id="login">
+    <div class="logo">Pathemu</div>
+    <p class="tag">Il tuo diario di viaggio, sulla mappa.</p>
+    <div class="lcard">
+      <div class="seg" id="ltabs"><button data-act="tab" data-t="in">Log in</button><button data-act="tab" data-t="up">Sign up</button></div>
+      <button class="gbtn" data-act="login"><svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</button>
+      <div class="sep">oppure</div>
+      <div class="fold" id="lname"><div><label class="field"><span>Nome utente</span><div class="inp" id="lnameIcon"><input id="in-user" placeholder="fnc_fabio" autocomplete="off"></div></label></div></div>
+      <label class="field"><span>Email</span><div class="inp" id="lmailIcon"><input id="in-mail" type="email" placeholder="nome@email.com" autocomplete="off"></div></label>
+      <label class="field"><span>Password</span><div class="inp" id="lpwIcon"><input id="in-pw" type="password" placeholder="••••••••" autocomplete="off"></div></label>
+      <button class="btn pri" data-act="login" id="lcta">Log in</button>
+      <button class="tlink" data-act="forgotOrLogin" id="llink">Forgot Password?</button>
+    </div>
+    <p class="legal">Privacy Policy · Terms of Use</p>
+  </div>
+
+  <div id="scrim" data-act="scrim"></div>
+  <div id="sheets"></div>
+  <div id="toast" role="status"></div>
+  <div class="navpill"></div>
+</div></div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
